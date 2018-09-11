@@ -1,0 +1,222 @@
+html {
+  overflow-x: hidden;
+}
+
+[display~="flow"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: var(--horizontal-align, flex-start);
+      -ms-flex-pack: var(--horizontal-align, flex-start);
+          justify-content: var(--horizontal-align, flex-start);
+  -ms-flex-line-pack: var(--horizontal-align, flex-start);
+      align-content: var(--horizontal-align, flex-start);
+  -webkit-box-align: var(--vertical-align, flex-start);
+      -ms-flex-align: var(--vertical-align, flex-start);
+          align-items: var(--vertical-align, flex-start);
+}
+
+[display~="row"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: var(--horizontal-align, flex-start);
+      -ms-flex-pack: var(--horizontal-align, flex-start);
+          justify-content: var(--horizontal-align, flex-start);
+  -ms-flex-line-pack: var(--horizontal-align, flex-start);
+      align-content: var(--horizontal-align, flex-start);
+  -webkit-box-align: var(--vertical-align, flex-start);
+      -ms-flex-align: var(--vertical-align, flex-start);
+          align-items: var(--vertical-align, flex-start);
+}
+
+[display~="column"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: var(--vertical-align, flex-start);
+      -ms-flex-pack: var(--vertical-align, flex-start);
+          justify-content: var(--vertical-align, flex-start);
+  -ms-flex-line-pack: var(--vertical-align, flex-start);
+      align-content: var(--vertical-align, flex-start);
+  -webkit-box-align: var(--horizontal-align, flex-start);
+      -ms-flex-align: var(--horizontal-align, flex-start);
+          align-items: var(--horizontal-align, flex-start);
+}
+
+[horizontal-align~="left"] {
+  --horizontal-align: flex-start;
+}
+
+[horizontal-align~="center"] {
+  --horizontal-align: center;
+}
+
+[horizontal-align~="right"] {
+  --horizontal-align: flex-end;
+}
+
+[horizontal-align~="justify"] {
+  --horizontal-align: space-between;
+}
+
+[vertical-align~="top"] {
+  --vertical-align: flex-start;
+}
+
+[vertical-align~="center"] {
+  --vertical-align: center;
+}
+
+[vertical-align~="bottom"] {
+  --vertical-align: flex-end;
+}
+
+[text-align~="left"] {
+  text-align: left;
+}
+
+[text-align~="center"] {
+  text-align: center;
+}
+
+[text-align~="right"] {
+  text-align: right;
+}
+
+[padding~="4px"] {
+  padding: 4px;
+}
+
+[padding~="8px"] {
+  padding: 8px;
+}
+
+[padding~="16px"] {
+  padding: 16px;
+}
+
+[padding~="32px"] {
+  padding: 32px;
+}
+
+[padding~="64px"] {
+  padding: 64px;
+}
+
+[child-width~="full"] > * {
+  width: calc(100% + var(--spacing-for-children, 0px) - var(--spacing-from-parent, 0px));
+}
+
+[child-width~="2/3"] > * {
+  width: calc(100%/3*2 - var(--spacing-from-parent, 0px) + var(--spacing-for-children, 0px));
+}
+
+[child-width~="half"] > * {
+  width: calc(50% - var(--spacing-from-parent, 0px) + var(--spacing-for-children, 0px));
+}
+
+[child-width~="1/3"] > * {
+  width: calc(100%/3 - var(--spacing-from-parent, 0px) + var(--spacing-for-children, 0px));
+}
+
+[width~="full"] {
+  width: calc(100% + var(--spacing-for-children, 0px) - var(--spacing-from-parent, 0px));
+}
+
+[width~="2/3"] {
+  width: calc(100%/3*2 - var(--spacing-from-parent, 0px) + var(--spacing-for-children, 0px));
+}
+
+[width~="half"] {
+  width: calc(50% - var(--spacing-from-parent, 0px) + var(--spacing-for-children, 0px));
+}
+
+[width~="1/3"] {
+  width: calc(100%/3 - var(--spacing-from-parent, 0px) + var(--spacing-for-children, 0px));
+}
+
+[width~="fill"] {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+[child-spacing~="8px"] {
+  --spacing-for-children: 8px;
+  margin: calc(var(--spacing-from-parent, 0px)/2 - 4px);
+}
+
+[child-spacing~="8px"] > * {
+  --spacing-from-parent: 8px;
+}
+
+[child-spacing~="8px"] > :not([child-spacing]) {
+  margin: 4px;
+}
+
+[child-spacing~="16px"] {
+  --spacing-for-children: 16px;
+  margin: calc(var(--spacing-from-parent, 0px)/2 - 8px);
+}
+
+[child-spacing~="16px"] > * {
+  --spacing-from-parent: 16px;
+}
+
+[child-spacing~="16px"] > :not([child-spacing]) {
+  margin: 8px;
+}
+
+[child-spacing~="32px"] {
+  --spacing-for-children: 32px;
+  margin: calc(var(--spacing-from-parent, 0px)/2 - 16px);
+}
+
+[child-spacing~="32px"] > * {
+  --spacing-from-parent: 32px;
+}
+
+[child-spacing~="32px"] > :not([child-spacing]) {
+  margin: 16px;
+}
+
+[child-spacing~="64px"] {
+  --spacing-for-children: 64px;
+  margin: calc(var(--spacing-from-parent, 0px)/2 - 32px);
+}
+
+[child-spacing~="64px"] > * {
+  --spacing-from-parent: 64px;
+}
+
+[child-spacing~="64px"] > :not([child-spacing]) {
+  margin: 32px;
+}
+
+[child-spacing] > :not([child-spacing]) {
+  --spacing-for-children: 0px;
+}
+
+[child-spacing] > :not([child-spacing]) > * {
+  --spacing-from-parent: 0px;
+}
+/*# sourceMappingURL=mg.css.map */
